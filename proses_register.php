@@ -7,8 +7,7 @@
     $namaLengkap=$_POST['NamaLengkap'];
     $alamat=$_POST['Alamat'];
 
-    $sql=mysqli_query($conn,"insert into user VALUES
-    ('','$username','$password','$email','$namaLengkap','$alamat')");
+    $sql=mysqli_query($conn,"insert into user values('','$username','$password','$email','$namaLengkap','$alamat')");
 
     header("location:login.php")
 ?>
