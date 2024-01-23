@@ -9,5 +9,5 @@
 
     $sql=mysqli_query($conn,"insert into user values('','$username','$password','$email','$namaLengkap','$alamat')");
 
-    header("location:login.php")
+    header("location:login.php");
 ?>
