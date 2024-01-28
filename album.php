@@ -26,6 +26,23 @@ if (!isset($_SESSION['UserID'])) {
         <li><a href="album.php">Album</a></li>
         <li><a href="logout.php">Logout</a></li>
     </ul>
+
+    <form action="tambah_album.php" method="post">
+        <table>
+            <tr>
+                <td>Nama Album</td>
+                <td><input type="text" name="namaAlbum"></td>
+            </tr>
+            <tr>
+                <td>Deskripsi</td>
+                <td><input type="text" name="deskripsi"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" name="Tambahkan"></td>
+            </tr>
+        </table>
+    </form>
 </body>
 
 </html>
