@@ -1,11 +1,11 @@
 <?php
-// $servername = "localhost";
-// $username = "root";
-// $password = "";
-// $database = "Galeri20240115";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "Galeri20240115";
 
 // Create connection
-$conn=mysqli_connect("localhost","root","","Galeri20240115");
+$conn=mysqli_connect("$servername","$username","","$database");
 
 // Check koneksi
 
