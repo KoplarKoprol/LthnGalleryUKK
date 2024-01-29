@@ -1,6 +1,6 @@
 <?php
-// error_reporting(E_ALL);
-// ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 session_start();
 if (!isset($_SESSION['UserID'])) {
     header("location:login.php");
@@ -43,6 +43,37 @@ if (!isset($_SESSION['UserID'])) {
             </tr>
         </table>
     </form>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            <th>ID</th>
+            <th>Nama</th>
+            <th>Deskripsi</th>
+            <th>Tanggal Dibuat</th>
+            <th>Aksi</th>
+        </tr>
+        <?php
+        include "koneksi.php";
+        $userid = $_SESSION['UserID'];
+        $sql = mysqli_query($conn, "select * from album where UserID='$userid'");
+        while ($data = mysqli_fetch_array($sql)) {
+
+        ?>
+            <tr>
+                <td><?=$data['AlbumID']?></td>
+                <td><?=$data['NamaAlbum']?></td>
+                <td><?=$data['Deskripsi']?></td>
+                <td><?=$data['TanggalDibuat']?></td>
+                <td>
+                    <a href="hapus_album.php?Albumid=<?=$data['AlbumID']?>">Hapus</a>
+                    <a href="edit_album.php?Albumid=<?=$data['AlbumID']?>">Edit</a>
+                </td>
+            </tr>
+        <?php
+        }
+        ?>
+
+
+    </table>
 </body>
 
 </html>
