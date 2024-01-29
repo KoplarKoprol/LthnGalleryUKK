@@ -23,7 +23,9 @@ if (!isset($_SESSION['UserID'])) {
         </b></p>
 
     <ul>
+        <li><a href="home.php">Beranda</a></li>
         <li><a href="album.php">Album</a></li>
+        <li><a href="foto.php">Foto</a></li>
         <li><a href="logout.php">Logout</a></li>
     </ul>
 
@@ -57,18 +59,26 @@ if (!isset($_SESSION['UserID'])) {
         $sql = mysqli_query($conn, "select * from album where UserID='$userid'");
         while ($data = mysqli_fetch_array($sql)) {
 
-        ?>
+            ?>
             <tr>
-                <td><?=$data['AlbumID']?></td>
-                <td><?=$data['NamaAlbum']?></td>
-                <td><?=$data['Deskripsi']?></td>
-                <td><?=$data['TanggalDibuat']?></td>
                 <td>
-                    <a href="hapus_album.php?Albumid=<?=$data['AlbumID']?>">Hapus</a>
-                    <a href="edit_album.php?Albumid=<?=$data['AlbumID']?>">Edit</a>
+                    <?= $data['AlbumID'] ?>
+                </td>
+                <td>
+                    <?= $data['NamaAlbum'] ?>
+                </td>
+                <td>
+                    <?= $data['Deskripsi'] ?>
+                </td>
+                <td>
+                    <?= $data['TanggalDibuat'] ?>
+                </td>
+                <td>
+                    <a href="hapus_album.php?Albumid=<?= $data['AlbumID'] ?>">Hapus</a>
+                    <a href="edit_album.php?Albumid=<?= $data['AlbumID'] ?>">Edit</a>
                 </td>
             </tr>
-        <?php
+            <?php
         }
         ?>
 

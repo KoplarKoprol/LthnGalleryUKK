@@ -23,33 +23,36 @@ if (!isset($_SESSION['UserID'])) {
         </b></p>
 
     <ul>
+        <li><a href="home.php">Beranda</a></li>
         <li><a href="album.php">Album</a></li>
+        <li><a href="foto.php">Foto</a></li>
         <li><a href="logout.php">Logout</a></li>
     </ul>
 
     <form action="perbarui_album.php" method="post">
-        <?php 
-            include "koneksi.php";
-            $albumid=$_GET['AlbumID'];
-            $sql=mysqli_query($conn, "SELECT * FROM album WHERE AlbumID='$albumid'");
-            while($data=mysqli_fetch_array($sql)){
-        ?>
-        <table>
-            <tr>
-                <td>Nama Album</td>
-                <td><input required type="text" name="namaAlbum" value="<?=$_data['NamaAlbum']?>"></td>
-            </tr>
-            <tr>
-                <td>Deskripsi</td>
-                <td><input type="text" name="deskripsi" value="<?=$_data['Deskripsi']?>"></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><input type="submit" name="Perbarui"></td>
-            </tr>
-        </table>
         <?php
-            }
+        include "koneksi.php";
+        $albumid = $_GET['Albumid'];
+        $sql = mysqli_query($conn, "SELECT * FROM album WHERE AlbumID='$albumid'");
+        while ($data = mysqli_fetch_array($sql)) {
+            ?>
+            <input type="text" name="albumID" value="<?= $data['AlbumID'] ?>" hidden>
+            <table>
+                <tr>
+                    <td>Nama Album</td>
+                    <td><input required type="text" name="namaAlbum" value="<?= $data['NamaAlbum'] ?>"></td>
+                </tr>
+                <tr>
+                    <td>Deskripsi</td>
+                    <td><input type="text" name="deskripsi" value="<?= $data['Deskripsi'] ?>"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" name="Perbarui"></td>
+                </tr>
+            </table>
+            <?php
+        }
         ?>
     </form>
 

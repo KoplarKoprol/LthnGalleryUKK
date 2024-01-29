@@ -24,6 +24,7 @@ if (!isset($_SESSION['UserID'])) {
 
     <ul>
         <li><a href="album.php">Album</a></li>
+        <li><a href="foto.php">Foto</a></li>
         <li><a href="logout.php">Logout</a></li>
     </ul>
 </body>
