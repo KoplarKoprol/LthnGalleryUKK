@@ -23,7 +23,7 @@ if (!isset($_SESSION['UserID'])) {
         </b></p>
 
     <ul>
-        <li><a href="home.php">Beranda</a></li>
+        <li><a href="index.php">Beranda</a></li>
         <li><a href="album.php">Album</a></li>
         <li><a href="foto.php">Foto</a></li>
         <li><a href="logout.php">Logout</a></li>
@@ -73,34 +73,42 @@ if (!isset($_SESSION['UserID'])) {
     <table border="1" cellpadding="5" cellspacing="0">
         <tr>
             <th>ID</th>
-            <th>Nama</th>
+            <th>Judul</th>
             <th>Deskripsi</th>
-            <th>Tanggal Dibuat</th>
+            <th>Tanggal Diunggah</th>
+            <th>Lokasi File</th>
+            <th>Album</th>
             <th>Aksi</th>
         </tr>
         <?php
         include "koneksi.php";
         $userid = $_SESSION['UserID'];
-        $sql = mysqli_query($conn, "select * from album where UserID='$userid'");
+        $sql = mysqli_query($conn, "SELECT * FROM foto,album where foto.UserID='$userid' AND foto.AlbumID=album.AlbumID");
         while ($data = mysqli_fetch_array($sql)) {
 
             ?>
             <tr>
                 <td>
-                    <?= $data['AlbumID'] ?>
+                    <?= $data['FotoID'] ?>
+                </td>
+                <td>
+                    <?= $data['JudulFoto'] ?>
+                </td>
+                <td>
+                    <?= $data['DeskripsiFoto'] ?>
+                </td>
+                <td>
+                    <?= $data['TanggalUnggah'] ?>
+                </td>
+                <td>
+                    <img width="200" src="gambar/<?= $data['LokasiFile'] ?>" alt="">
                 </td>
                 <td>
                     <?= $data['NamaAlbum'] ?>
                 </td>
                 <td>
-                    <?= $data['Deskripsi'] ?>
-                </td>
-                <td>
-                    <?= $data['TanggalDibuat'] ?>
-                </td>
-                <td>
-                    <a href="hapus_album.php?Albumid=<?= $data['AlbumID'] ?>">Hapus</a>
-                    <a href="edit_album.php?Albumid=<?= $data['AlbumID'] ?>">Edit</a>
+                    <a href="hapus_foto.php?fotoid=<?= $data['FotoID'] ?>">Hapus</a>
+                    <a href="edit_foto.php?fotoid=<?= $data['FotoID'] ?>">Edit</a>
                 </td>
             </tr>
             <?php
