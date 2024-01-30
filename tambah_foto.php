@@ -14,7 +14,7 @@ $tanggalunggah = date("Y-m-d");
 $userid = $_SESSION['UserID'];
 
 $rand = rand();
-$ekstensi = array('png', 'jpg', 'jpeg', 'gif');
+$ekstensi = array('png', 'jpg', 'jpeg', 'JPG', 'gif');
 $filename = $_FILES['lokasiFile']['name'];
 $ukuran = $_FILES['lokasiFile']['size'];
 $ext = pathinfo($filename, PATHINFO_EXTENSION);
