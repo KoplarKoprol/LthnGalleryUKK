@@ -8,7 +8,7 @@ include "koneksi.php";
 session_start();
 
 $judulFoto = $_POST['judulFoto'];
-$deskripsiFoto = $_POST['deskripsi'];
+$deskripsiFoto = $_POST['deskripsiFoto'];
 $albumID = $_POST['albumid'];
 $tanggalunggah = date("Y-m-d");
 $userid = $_SESSION['UserID'];

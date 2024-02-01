@@ -36,20 +36,19 @@ if (!isset($_SESSION['UserID'])) {
         $sql = mysqli_query($conn, "SELECT * FROM foto WHERE FotoID='$ftoid'");
         while ($data = mysqli_fetch_array($sql)) {
             ?>
-            <input type="text" name="fotoID" value="<?= $data['FotoID'] ?>" hidden>
+            <input type="text" name="fotoid" value="<?= $data['FotoID'] ?>" hidden>
             <table>
                 <tr>
                     <td>Judul Foto</td>
-                    <td><input required type="text" name="jdlFoto" value="<?= $data['JudulFoto'] ?>"></td>
+                    <td><input required type="text" name="judulFoto" value="<?= $data['JudulFoto'] ?>"></td>
                 </tr>
                 <tr>
                     <td>Deskripsi</td>
-                    <td><input type="text" name="deskfoto" value="<?= $data['DeskripsiFoto'] ?>"></td>
+                    <td><input type="text" name="deskripsiFoto" value="<?= $data['DeskripsiFoto'] ?>"></td>
                 </tr>
                 <tr>
-                <tr>
                     <td>Lokasi File</td>
-                    <td><input type="file" name="locFile"></td>
+                    <td><input type="file" name="lokasiFile"></td>
                 </tr>
                 <tr>
                     <td>Album</td>
@@ -60,9 +59,9 @@ if (!isset($_SESSION['UserID'])) {
                             $sql2 = mysqli_query($conn, "SELECT * FROM album WHERE UserID='$userid'");
                             while ($data2 = mysqli_fetch_array($sql2)) {
                                 ?>
-                                <option value="<?php if ($data2['AlbumID'] == $data['AlbumID']) {
-                                    echo 'selected';
-                                } ?>">
+                                <option value="<?= $data2['AlbumID'] ?>" <?php if ($data2['AlbumID'] == $data['AlbumID']) {
+                                      echo 'selected';
+                                  } ?>>
                                     <?= $data2['NamaAlbum'] ?>
                                 </option>
                                 <?php
@@ -74,7 +73,7 @@ if (!isset($_SESSION['UserID'])) {
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input type="submit" name="Ubah"></td>
+                    <td><input type="submit" value="Ubah"></td>
                 </tr>
             </table>
             <?php

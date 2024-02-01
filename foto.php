@@ -37,7 +37,7 @@ if (!isset($_SESSION['UserID'])) {
             </tr>
             <tr>
                 <td>Deskripsi</td>
-                <td><input type="text" name="deskripsi"></td>
+                <td><input type="text" name="deskripsiFoto"></td>
             </tr>
             <tr>
                 <td>Lokasi File</td>
