@@ -23,12 +23,11 @@ if (!isset($_SESSION['UserID'])) {
         </b></p>
 
     <ul>
-        <li><a href="index.php">Beranda</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="album.php">Album</a></li>
         <li><a href="foto.php">Foto</a></li>
         <li><a href="logout.php">Logout</a></li>
     </ul>
-
     <form action="perbarui_album.php" method="post">
         <?php
         include "koneksi.php";

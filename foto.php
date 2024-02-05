@@ -23,7 +23,7 @@ if (!isset($_SESSION['UserID'])) {
         </b></p>
 
     <ul>
-        <li><a href="index.php">Beranda</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="album.php">Album</a></li>
         <li><a href="foto.php">Foto</a></li>
         <li><a href="logout.php">Logout</a></li>
@@ -78,6 +78,7 @@ if (!isset($_SESSION['UserID'])) {
             <th>Tanggal Diunggah</th>
             <th>Lokasi File</th>
             <th>Album</th>
+            <th>Disukai</th>
             <th>Aksi</th>
         </tr>
         <?php
@@ -105,6 +106,13 @@ if (!isset($_SESSION['UserID'])) {
                 </td>
                 <td>
                     <?= $data['NamaAlbum'] ?>
+                </td>
+                <td>
+                    <?php
+                    $fotoid = $data['FotoID'];
+                    $sql2 = mysqli_query($conn, "SELECT * FROM likefoto WHERE FotoID='$fotoid'");
+                    echo mysqli_num_rows($sql2);
+                    ?>
                 </td>
                 <td>
                     <a href="hapus_foto.php?fotoid=<?= $data['FotoID'] ?>">Hapus</a>
