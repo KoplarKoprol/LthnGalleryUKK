@@ -75,6 +75,7 @@
                 </td>
                 <td>
                     <a href="like.php?fotoid=<?= $data['FotoID'] ?>">Suka</a>
+                    <a href="komentar.php?fotoid=<?= $data['FotoID'] ?>">Komentar</a>
                 </td>
 
             </tr>
