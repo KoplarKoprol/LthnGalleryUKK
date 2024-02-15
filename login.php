@@ -21,7 +21,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" value="Login"></td>
+                <td><input type="submit" value="Login"> <a href="index.php"> <input type="button" value="Kembali"></a></td>
             </tr>
         </table>
     </form>

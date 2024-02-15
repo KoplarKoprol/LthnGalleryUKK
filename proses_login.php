@@ -20,7 +20,7 @@ if ($cek == 1) {
         $_SESSION['NamaLengkap'] = $data['NamaLengkap'];
 
     }
-    header("location:beranda.php");
+    header("location:index.php");
 } else {
     header("location:login.php");
 }

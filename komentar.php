@@ -51,11 +51,11 @@ if (!isset($_SESSION['UserID'])) {
                 </tr>
                 <tr>
                     <td>Komentar</td>
-                    <td><input type="text" name="IsiKomentar"></td>
+                    <td><textarea rows="4" cols="50" name="IsiKomentar"></textarea></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input type="submit" name="Tambahkan"></td>
+                    <td><input type="submit" value="Tambahkan"></td>
                 </tr>
             </table>
             <?php
@@ -65,15 +65,15 @@ if (!isset($_SESSION['UserID'])) {
 
     <table width="100%" border="1" cellpading=5 cellspacinng=0>
         <tr>
-            <th>ID</th>
-            <th>Nama</th>
-            <th>Komentar</th>
-            <th>Tanggal</th>
+            <th width="5%">ID</th>
+            <th width="20%">Nama</th>
+            <th width="25%">Komentar</th>
+            <th width="20%">Tanggal</th>
         </tr>
         <?php
         include "koneksi.php";
         $userid = $_SESSION['UserID'];
-        $sql = mysqli_query($conn, "SELECT * FROM komentarfoto,user where komentarfoto.UserID=user.UserID");
+        $sql = mysqli_query($conn, "SELECT * FROM komentarfoto,user WHERE komentarfoto.UserID=user.UserID AND FotoID='$fotoid'");
         while ($data = mysqli_fetch_array($sql)) {
 
             ?>
