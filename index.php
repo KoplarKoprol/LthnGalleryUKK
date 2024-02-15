@@ -12,7 +12,6 @@
     <?php
     session_start();
     if (!isset($_SESSION['UserID'])) {
-        header("location:login.php");
         ?>
         <ul>
             <li><a href="register.php">Register</a></li>
