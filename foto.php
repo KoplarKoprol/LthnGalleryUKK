@@ -14,20 +14,24 @@ if (!isset($_SESSION['UserID'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Foto</title>
+    <link rel="stylesheet" href="gaya.css">
 </head>
 
 <body>
-    <h1>Halaman Foto</h1>
+
+    <nav>
+        <h1>Halaman Foto</h1>
+        <ul>
+            <li><a href="index.php">Beranda</a></li>
+            <li><a href="album.php">Album</a></li>
+            <li><a href="foto.php">Foto</a></li>
+            <li><a href="logout.php">Logout</a></li>
+        </ul>
+    </nav>
+
     <p>Selamat Datang <b>
             <?= $_SESSION['NamaLengkap'] ?>
         </b></p>
-
-    <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="album.php">Album</a></li>
-        <li><a href="foto.php">Foto</a></li>
-        <li><a href="logout.php">Logout</a></li>
-    </ul>
 
     <form action="tambah_foto.php" method="post" enctype="multipart/form-data">
         <table>

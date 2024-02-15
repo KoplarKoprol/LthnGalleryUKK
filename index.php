@@ -5,36 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Landing</title>
+    <link rel="stylesheet" href="gaya.css">
 </head>
 
 <body>
-    <h1>Halaman Landing</h1>
     <?php
     session_start();
     if (!isset($_SESSION['UserID'])) {
         ?>
-        <ul>
-            <li><a href="register.php">Register</a></li>
-            <li><a href="login.php">Login</a></li>
-        </ul>
+        <nav>
+            <tr>
+                <td><a href="index.php">Beranda</a></td>
+                <td><a href="register.php">Register</a></td>
+                <td><a href="login.php">Login</a></td>
+            </tr>
+        </nav>
         <?php
     } else {
         ?>
+        <nav>
+            <h1>Beranda</h1>
+            <ul>
+                <li><a href="index.php">Beranda</a></li>
+                <li><a href="album.php">Album</a></li>
+                <li><a href="foto.php">Foto</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </nav>
         <p>Selamat Datang <b>
                 <?= $_SESSION['NamaLengkap'] ?>
             </b></p>
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="album.php">Album</a></li>
-            <li><a href="foto.php">Foto</a></li>
-            <li><a href="logout.php">Logout</a></li>
-        </ul>
-
         <?php
     }
     ?>
-
-    <table width="100%" border="1" cellpadding="5" cellspacing="0">
+    <table border="1" cellpadding="5" cellspacing="0">
         <tr>
             <th>ID</th>
             <th>Judul</th>

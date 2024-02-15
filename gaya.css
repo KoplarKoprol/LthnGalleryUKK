@@ -1,0 +1,62 @@
+body {
+    /* background-image: url(media/bekgron/JogetDebat.gif);
+    background-repeat: no-repeat;
+    background-position: center; */
+    margin: 0;
+    padding: 0;
+
+}
+
+nav {
+
+    background-color: #ff0c0c;
+    display:flex;
+    padding: 1 rem 2 rem;
+    justify-content: space-between;
+
+}
+
+nav ul {
+
+    list-style: none;
+    display: flex;
+    margin: 0;
+    align-items: center;
+    /* padding: 0; */
+    gap: 2rem;
+
+}
+/* h1 {
+display:inline;
+} */
+
+
+/* .navbar li {
+
+    display: inline;
+    justify-content: space-between; 
+    
+} */
+/* .navbar li h1 {
+
+    display: inline;
+    justify-content: space-between; 
+    
+} */
+
+nav a {
+
+    color: rgb(39, 24, 255);
+    background-color: chocolate;
+    text-decoration: none;
+    font-size: x-large;
+    padding: 10px 20px;
+
+}
+
+nav a:hover {
+
+   color: aquamarine;
+
+}
+
