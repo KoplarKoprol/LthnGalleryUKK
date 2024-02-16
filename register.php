@@ -5,12 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Registrasi</title>
+    <link rel="stylesheet" href="gaya.css">
 </head>
 
 <body>
-    <h1>Halaman Registrasi</h1>
+    <nav class="navbar">
+        <h1>Halaman Registrasi</h1>
+        <ul>
+            <li><a href="index.php">Beranda</a></li>
+        </ul>
+    </nav>
     <form action="proses_register.php" method="post">
-        <table>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <table class="tabelos" cellspacing="20">
             <tr>
                 <td>Username</td>
                 <td><input required type="text" name="username"></td>

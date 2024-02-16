@@ -14,21 +14,23 @@ if (!isset($_SESSION['UserID'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Pengeditan Foto</title>
+    <link rel="stylesheet" href="gaya.css">
 </head>
 
 <body>
-    <h1>Halaman Pengeditan Foto</h1>
-    <p>Selamat Datang <b>
-            <?= $_SESSION['NamaLengkap'] ?>
-        </b></p>
+    <nav class="navbar">
+        <h1>Halaman Pengeditan Foto</h1>
+        <ul>
+            <li><a href="index.php">Beranda</a></li>
+            <li><a href="album.php">Album</a></li>
+            <li><a href="foto.php">Foto</a></li>
+            <li><a href="logout.php">Logout</a></li>
+        </ul>
+    </nav>
 
-    <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="album.php">Album</a></li>
-        <li><a href="foto.php">Foto</a></li>
-        <li><a href="logout.php">Logout</a></li>
-    </ul>
-
+    <p align="center">Selamat Mengedit <b style="color: red ;">
+                <?= $_SESSION['NamaLengkap'] ?>
+            </b></p>
     <form action="perbarui_foto.php" method="post" enctype="multipart/form-data">
         <?php
         include "koneksi.php";
@@ -37,7 +39,7 @@ if (!isset($_SESSION['UserID'])) {
         while ($data = mysqli_fetch_array($sql)) {
             ?>
             <input type="text" name="fotoid" value="<?= $data['FotoID'] ?>" hidden>
-            <table>
+            <table class="tabelos" cellspacing="5">
                 <tr>
                     <td>Judul Foto</td>
                     <td><input required type="text" name="judulFoto" value="<?= $data['JudulFoto'] ?>"></td>

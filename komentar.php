@@ -14,20 +14,22 @@ if (!isset($_SESSION['UserID'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Komentar</title>
+    <link rel="stylesheet" href="gaya.css">
 </head>
 
 <body>
-    <h1>Halaman Komentar</h1>
-    <p>Selamat Datang <b>
+    <nav class="navbar">
+        <h1>Halaman Komentar</h1>
+        <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="album.php">Album</a></li>
+            <li><a href="foto.php">Foto</a></li>
+            <li><a href="logout.php">Logout</a></li>
+        </ul>
+    </nav>
+    <p align="center">Selamat Berkomentar <b style="color: red ;">
             <?= $_SESSION['NamaLengkap'] ?>
         </b></p>
-
-    <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="album.php">Album</a></li>
-        <li><a href="foto.php">Foto</a></li>
-        <li><a href="logout.php">Logout</a></li>
-    </ul>
     <form action="tambah_komentar.php" method="post">
         <?php
         include "koneksi.php";
@@ -36,7 +38,7 @@ if (!isset($_SESSION['UserID'])) {
         while ($data = mysqli_fetch_array($sql)) {
             ?>
             <input type="text" name="fotoid" value="<?= $data['FotoID'] ?>" hidden>
-            <table>
+            <table class="tabelos" cellspacing=5>
                 <tr>
                     <td>Judul Foto</td>
                     <td><input required type="text" name="judulFoto" value="<?= $data['JudulFoto'] ?>"></td>
@@ -62,8 +64,8 @@ if (!isset($_SESSION['UserID'])) {
         }
         ?>
     </form>
-
-    <table width="100%" border="1" cellpading=5 cellspacinng=0>
+    <br>
+    <table class="tabelos" width="100%" border="1" cellpading=5 cellspacing=5>
         <tr>
             <th width="5%">ID</th>
             <th width="20%">Nama</th>

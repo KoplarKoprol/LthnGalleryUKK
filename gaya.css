@@ -1,22 +1,23 @@
-body {
+body{
     /* background-image: url(media/bekgron/JogetDebat.gif);
     background-repeat: no-repeat;
     background-position: center; */
     margin: 0;
     padding: 0;
-
+    background-color: black;
+    color: white;
 }
 
-nav {
+.navbar {
 
-    background-color: #ff0c0c;
+    background-color: #977979;
     display:flex;
     padding: 1 rem 2 rem;
     justify-content: space-between;
 
 }
 
-nav ul {
+.navbar ul {
 
     list-style: none;
     display: flex;
@@ -44,19 +45,31 @@ display:inline;
     
 } */
 
-nav a {
+.navbar a {
 
-    color: rgb(39, 24, 255);
+    color: rgb(109, 0, 0);
     background-color: chocolate;
     text-decoration: none;
     font-size: x-large;
     padding: 10px 20px;
+    border-radius: 15px;
 
 }
 
-nav a:hover {
+.navbar a:hover {
 
-   color: aquamarine;
+   color: rgb(255, 184, 184);
 
+}
+
+.tabelos {
+    margin: auto;
+    background-color: #ffffff;
+    color: black;
+    border-radius: 10px;
+}
+
+.tabelos th {
+    background-color: rgb(255, 183, 183);
 }
 

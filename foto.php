@@ -19,7 +19,7 @@ if (!isset($_SESSION['UserID'])) {
 
 <body>
 
-    <nav>
+    <nav class="navbar">
         <h1>Halaman Foto</h1>
         <ul>
             <li><a href="index.php">Beranda</a></li>
@@ -29,15 +29,16 @@ if (!isset($_SESSION['UserID'])) {
         </ul>
     </nav>
 
-    <p>Selamat Datang <b>
+    <p align="center">Selamat Datang di Halaman Foto <b style="color: red ;">
             <?= $_SESSION['NamaLengkap'] ?>
         </b></p>
 
     <form action="tambah_foto.php" method="post" enctype="multipart/form-data">
-        <table>
+        <table class="tabelos" cellspacing="5">
             <tr>
                 <td>Judul</td>
-                <td><input required type="text" name="judulFoto"></td>
+                <td><input required type=" text" name="judulFoto">
+            </td>
             </tr>
             <tr>
                 <td>Deskripsi</td>
@@ -69,12 +70,13 @@ if (!isset($_SESSION['UserID'])) {
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" name="Tambahkan">
+                <td><input type="submit" value="Tambahkan">
                 </td>
             </tr>
         </table>
+        <br>
     </form>
-    <table border="1" cellpadding="5" cellspacing="0">
+    <table class="tabelos" border="1" cellpadding="5" cellspacing="5">
         <tr>
             <th>ID</th>
             <th>Judul</th>
@@ -106,7 +108,7 @@ if (!isset($_SESSION['UserID'])) {
                     <?= $data['TanggalUnggah'] ?>
                 </td>
                 <td>
-                    <img width="200" src="gambar/<?= $data['LokasiFile'] ?>" alt="">
+                    <img width="200" src="gambar/<?= $data['LokasiFile'] ?>">
                 </td>
                 <td>
                     <?= $data['NamaAlbum'] ?>

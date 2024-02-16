@@ -13,17 +13,19 @@
     session_start();
     if (!isset($_SESSION['UserID'])) {
         ?>
-        <nav>
-            <tr>
-                <td><a href="index.php">Beranda</a></td>
-                <td><a href="register.php">Register</a></td>
-                <td><a href="login.php">Login</a></td>
-            </tr>
+        <nav class="navbar">
+            <h1>
+                <ahref="index.php">Beranda</ahref=>
+            </h1>
+            <ul>
+                <li><a href="register.php">Register</a></li>
+                <li><a href="login.php">Login</a></li>
+            </ul>
         </nav>
         <?php
     } else {
         ?>
-        <nav>
+        <nav class="navbar">
             <h1>Beranda</h1>
             <ul>
                 <li><a href="index.php">Beranda</a></li>
@@ -32,13 +34,14 @@
                 <li><a href="logout.php">Logout</a></li>
             </ul>
         </nav>
-        <p>Selamat Datang <b>
+        <p align="center">Selamat Datang <b style="color: red ;">
                 <?= $_SESSION['NamaLengkap'] ?>
             </b></p>
         <?php
     }
     ?>
-    <table border="1" cellpadding="5" cellspacing="0">
+
+    <table class="tabelos" border="1" cellpadding="5" cellspacing="0">
         <tr>
             <th>ID</th>
             <th>Judul</th>

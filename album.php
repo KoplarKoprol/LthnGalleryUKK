@@ -14,22 +14,24 @@ if (!isset($_SESSION['UserID'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halaman Album</title>
+    <link rel="stylesheet" href="gaya.css">
 </head>
 
 <body>
-    <h1>Halaman Album</h1>
-    <p>Selamat Datang <b>
-            <?= $_SESSION['NamaLengkap'] ?>
-        </b></p>
-
-    <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="album.php">Album</a></li>
-        <li><a href="foto.php">Foto</a></li>
-        <li><a href="logout.php">Logout</a></li>
-    </ul>
+    <nav class="navbar">
+        <h1>Halaman Album</h1>
+        <ul>
+            <li><a href="index.php">Beranda </a></li>
+            <li><a href="album.php">Album</a></li>
+            <li><a href="foto.php">Foto</a></li>
+            <li><a href="logout.php">Logout</a></li>
+        </ul>
+    </nav>
+    <p align="center">Selamat Datang di Album <b style="color: red ;">
+                <?= $_SESSION['NamaLengkap'] ?>
+            </b></p>
     <form action="tambah_album.php" method="post">
-        <table>
+        <table class="tabelos" cellspacing="5">
             <tr>
                 <td>Nama Album</td>
                 <td><input required type="text" name="namaAlbum"></td>
@@ -44,7 +46,8 @@ if (!isset($_SESSION['UserID'])) {
             </tr>
         </table>
     </form>
-    <table border="1" cellpadding="5" cellspacing="0">
+    <br>
+    <table class="tabelos" border="1" cellpadding="5" cellspacing="5">
         <tr>
             <th>ID</th>
             <th>Nama</th>
